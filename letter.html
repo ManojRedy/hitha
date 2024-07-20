@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crush Letter</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f0e4d7;
+            margin: 0;
+            background-image: url('hiha.jpg'); /* Update the path to your image */
+            background-size: cover;
+            background-position: center;
+            font-family: 'Cursive', sans-serif;
+        }
+
+        .letter-wrapper {
+            position: relative;
+            width: 600px;
+            height: 400px;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            transition: transform 1s ease;
+        }
+
+        .letter-closed {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: white;
+            text-align: center;
+            background: linear-gradient(to right, #ff6f61, #de6262, #ffb88c, #de6262, #ff6f61);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            
+        }
+
+        .letter-open {
+            display: none;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            font-size: 16px;
+            color: black;
+            opacity: 0;
+            transform: translateY(100px);
+            animation: slideUp 1s forwards 1s;
+        }
+        .letter-open :hover{
+            background: linear-gradient(to right, #10015b, #f8f802, #ff4502, #01802b, #c9028d);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+        }
+
+        .letter-open p {
+            margin: 0 0 10px 0;
+            transition: transform 1.3s ease;
+        }
+
+        .letter-open p:hover {
+            transform: scale(1.1);
+        }
+
+        .letter-open h1 {
+            font-size: 30px;
+            color: #e91e63;
+            text-align: center;
+        }
+
+        .mixed-color {
+            background: linear-gradient(to right, #ff6f61, #de6262, #ffb88c, #de6262, #ff6f61);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @keyframes slideUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes openWindow {
+            0% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.5); opacity: 0.5; }
+            100% { transform: scale(1); opacity: 0; }
+        }
+
+        .open-animation {
+            animation: openWindow 1s forwards;
+        }
+        .signature{
+            background: linear-gradient(to right, #d80862, #580418, #0729d0, #7b07b1, #0b8d1a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+        }
+    </style>
+</head>
+<body>
+
+<div class="letter-wrapper" onclick="openLetter()">
+    <div class="letter-closed">
+        Lets's open 💌
+    </div>
+    <div class="letter-open">
+        <h1 class="mixed-color">My Dearest Hitha,                 🌼</h1>
+        <p>From the moment we met once on that bus, I knew there was something special. Your smile brightens up my darkest days, and your presence makes everything better.</p>
+        <p>Although we don't know much about each other, here are a few things that I cherish about our brief encounter:</p>
+        <ul>
+            <li>Your smile that day was unforgettable.</li>
+            <li>I felt an instant connection with you.</li>
+        </ul>
+        <p>I look forward to creating countless beautiful memories with you. I am grateful for every moment we share, and I can't wait to see what the future holds for us.</p>
+        <p>With all my affection,</p>
+        <p class="signature">
+            Your stranger</p>
+    </div>
+</div>
+
+<script>
+    function openLetter() {
+        const letter = document.querySelector('.letter-closed');
+        letter.classList.add('open-animation');
+        setTimeout(() => {
+            letter.style.display = 'none';
+            document.querySelector('.letter-open').style.display = 'flex';
+        }, 1000);
+    }
+</script>
+
+</body>
+</html>

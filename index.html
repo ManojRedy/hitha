@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crush Letter</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            margin: 0;
+            background: linear-gradient(to right, #f0e4d7, #d777ed, #ed8f8f, #a6b5ff, #d99ff3, #e3eba9);
+            background-size: cover;
+            background-position: center;
+            font-family: 'Cursive', sans-serif;
+        }
+
+        .letter-wrapper {
+            position: relative;
+            width: 600px;
+            height: 100px;
+            cursor: pointer;
+            background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent box */
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .letter-closed {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+            color: #e91e63; /* Bright color for contrast */
+            text-align: center;
+            background-color: rgba(255, 215, 0, 0.8); /* Semi-transparent background */
+            border-radius: 10px;
+            color: white;
+            font-weight: bold;
+            padding: 20px;
+        }
+
+        .letter-closed:hover {
+            background-color: rgba(255, 255, 255, 0.9);
+            color: #e91e63;
+        }
+    </style>
+</head>
+<body>
+
+<div class="letter-wrapper" onclick="openLetter()">
+    <div class="letter-closed">
+        Here’s something for you ❤
+    </div>
+</div>
+
+<script>
+    function openLetter() {
+        window.open('letter.html', '_blank');
+    }
+</script>
+
+</body>
+</html>
